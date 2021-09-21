@@ -1,0 +1,30 @@
+name: Complex
+
+on: push
+
+jobs:
+    ubuntu:
+        name: First Date
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print first date
+              run: date
+    windows:
+        name: Second Date
+        runs-on: windows-latest
+        steps:
+            - name: Print second date
+              run: date
+    macos:
+        name: Third Date
+        runs-on: macos-latest
+        steps:
+            - name: Print third date
+              run: date
+    depends:
+        name: Fourth Date
+        needs: [ubuntu, windows, macos]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print fourth date
+              run: date
